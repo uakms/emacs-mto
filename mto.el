@@ -2,7 +2,7 @@
 
 ;; Author: nakinor
 ;; Created: 2011-05-12
-;; Revised: 2015-07-26
+;; Revised: 2015-07-29
 
 ;;; Commentary:
 
@@ -20,6 +20,7 @@
 (require 'mto-vars)
 (require 'mto-menu)
 (require 'mto-color)
+(require 'mto-jisyo-edit)
 
 ;; 初期設定
 ; バッファ全体を置換するグローバルキーマップを有効にするか否か
