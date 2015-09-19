@@ -2,7 +2,7 @@
 
 ;; Author: nakinor
 ;; Created: 2011-05-12
-;; Revised: 2015-07-29
+;; Revised: 2015-09-19
 
 ;;; Commentary:
 
@@ -11,10 +11,22 @@
 ;;; Code:
 ;; マイナーモード設定
 (easy-mmode-define-minor-mode mto-mode
-                              "This is MTO Mode." ;説明文
-                              t ;初期値は有効
-                              " MTO" ;モードラインに表示する文字
-                              '()) ;マイナーモードでのキーバインド設定
+  "This is MTO Mode." ; 説明文
+  t                   ; 初期値は有効
+  " MTO"              ; モードラインに表示する文字
+  ; マイナーモードでのキーバインド設定
+  ; バッファ全体を対象とする置換はメニューバーから選択か M-x で
+  '(("\C-ct" . mto-region-trad-orth)
+    ("\C-cm" . mto-region-modern-orth)
+    ("\C-co" . mto-region-old-char)
+    ("\C-cn" . mto-region-new-char)
+    ("\C-ck" . mto-region-kansai)
+    ("\C-ch" . mto-region-hangeul)
+    ("\C-cc" . mto-region-check-traditional)
+;    ("\C-c]p" . mto-region-ruby-plain)
+;    ("\C-c]h" . mto-region-ruby-html)
+;    ("\C-c]l" . mto-region-ruby-latex)
+    ))
 
 ;; ライブラリの読み込み
 (require 'mto-vars)
@@ -24,7 +36,7 @@
 
 ;; 初期設定
 ; バッファ全体を置換するグローバルキーマップを有効にするか否か
-(defvar mto-global-keymaps nil) ;初期値は無効
+;(defvar mto-bufferall-keymaps nil) ;初期値は無効
 ; 置換された単語に色付けをするか否か
 (defvar mto-colorize-word t) ;初期値は有効
 
@@ -42,28 +54,28 @@
 (defvar mto-latex-tag '("\\\\ruby{" "}{" "}"))
 
 ;; グローバルキーマップの設定
-(if (equal mto-global-keymaps t)
-    (progn
-      (global-set-key (kbd "\C-c M-t") 'mto-trad-orth)
-      (global-set-key (kbd "\C-c M-m") 'mto-modern-orth)
-      (global-set-key (kbd "\C-c M-o") 'mto-old-char)
-      (global-set-key (kbd "\C-c M-n") 'mto-new-char)
-      (global-set-key (kbd "\C-c M-k") 'mto-kansai)
-      (global-set-key (kbd "\C-c M-h") 'mto-hangeul)
-      (global-set-key (kbd "\C-c M-c") 'mto-check-traditional)
-      (global-set-key (kbd "\C-c \C-u p") 'mto-ruby-plain)
-      (global-set-key (kbd "\C-c \C-u h") 'mto-ruby-html)
-      (global-set-key (kbd "\C-c \C-u l") 'mto-ruby-latex)))
-(global-set-key (kbd "\C-c t") 'mto-region-trad-orth)
-(global-set-key (kbd "\C-c m") 'mto-region-modern-orth)
-(global-set-key (kbd "\C-c o") 'mto-region-old-char)
-(global-set-key (kbd "\C-c n") 'mto-region-new-char)
-(global-set-key (kbd "\C-c k") 'mto-region-kansai)
-(global-set-key (kbd "\C-c h") 'mto-region-hangeul)
-(global-set-key (kbd "\C-c c") 'mto-region-check-traditional)
-(global-set-key (kbd "\C-c ]p") 'mto-region-ruby-plain)
-(global-set-key (kbd "\C-c ]h") 'mto-region-ruby-html)
-(global-set-key (kbd "\C-c ]l") 'mto-region-ruby-latex)
+;(if (equal mto-bufferall-keymaps t)
+;    (progn
+;      (global-set-key (kbd "\C-c M-t") 'mto-trad-orth)
+;      (global-set-key (kbd "\C-c M-m") 'mto-modern-orth)
+;      (global-set-key (kbd "\C-c M-o") 'mto-old-char)
+;      (global-set-key (kbd "\C-c M-n") 'mto-new-char)
+;      (global-set-key (kbd "\C-c M-k") 'mto-kansai)
+;      (global-set-key (kbd "\C-c M-h") 'mto-hangeul)
+;      (global-set-key (kbd "\C-c M-c") 'mto-check-traditional)
+;      (global-set-key (kbd "\C-c \C-u p") 'mto-ruby-plain)
+;      (global-set-key (kbd "\C-c \C-u h") 'mto-ruby-html)
+;      (global-set-key (kbd "\C-c \C-u l") 'mto-ruby-latex)))
+;(global-set-key (kbd "\C-c t") 'mto-region-trad-orth)
+;(global-set-key (kbd "\C-c m") 'mto-region-modern-orth)
+;(global-set-key (kbd "\C-c o") 'mto-region-old-char)
+;(global-set-key (kbd "\C-c n") 'mto-region-new-char)
+;(global-set-key (kbd "\C-c k") 'mto-region-kansai)
+;(global-set-key (kbd "\C-c h") 'mto-region-hangeul)
+;(global-set-key (kbd "\C-c c") 'mto-region-check-traditional)
+;(global-set-key (kbd "\C-c ]p") 'mto-region-ruby-plain)
+;(global-set-key (kbd "\C-c ]h") 'mto-region-ruby-html)
+;(global-set-key (kbd "\C-c ]l") 'mto-region-ruby-latex)
 
 
 ;; 辞書ファイルからハッシュを作成する際に利用する部品
