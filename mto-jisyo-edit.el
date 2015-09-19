@@ -2,7 +2,7 @@
 
 ;; Author: nakinor
 ;; Created: 2015-07-29
-;; Revised: 2015-07-29
+;; Revised: 2015-09-19
 
 ;;; Commentary:
 
@@ -26,6 +26,14 @@
                             ("/" . 'mto-jisyo-separater)
                             (" ;.*" . 'mto-jisyo-comment)
                             )))
+
+; ここに書いて良いものかわからないけど……
+(add-hook 'find-file-hooks
+          (function (lambda ()
+                      (if (string-match
+                           "[kana|kanji|kansai|check|ruby|hangeul]-jisyo"
+                           buffer-file-name)
+                          (mto-jisyo-edit)))))
 
 (provide 'mto-jisyo-edit)
 
