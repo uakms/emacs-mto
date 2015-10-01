@@ -2,7 +2,7 @@
 
 ;; Author: nakinor
 ;; Created: 2011-05-12
-;; Revised: 2015-09-19
+;; Revised: 2015-10-01
 
 ;;; Commentary:
 
@@ -12,7 +12,7 @@
 ;; マイナーモード設定
 (easy-mmode-define-minor-mode mto-mode
   "This is MTO Mode." ; 説明文
-  t                   ; 初期値は有効
+  nil                 ; 初期値は有効
   " MTO"              ; モードラインに表示する文字
   ; マイナーモードでのキーバインド設定
   ; バッファ全体を対象とする置換はメニューバーから選択か M-x で
