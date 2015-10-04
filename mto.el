@@ -42,6 +42,8 @@
 (require 'mto-menu)
 (require 'mto-color)
 (require 'mto-jisyo-edit)
+(with-eval-after-load 'twittering-mode
+  (require 'mto-tweet))
 
 ;; 初期設定
 ; バッファ全体を置換するグローバルキーマップを有効にするか否か

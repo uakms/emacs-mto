@@ -2,7 +2,7 @@
 
 ;; Author: nakinor
 ;; Created: 2012-06-25
-;; Revised: 2012-06-25
+;; Revised: 2015-10-04
 
 ;;; Commentary:
 
@@ -77,7 +77,7 @@
   (if (boundp 'mto-key-cdr-old)
       (font-lock-remove-keywords nil mto-key-cdr-old))
   (font-lock-mode 1))
-(global-set-key (kbd "\C-c u") 'mto-clear-color)
+;(global-set-key (kbd "\C-c u") 'mto-clear-color)
 
 (provide 'mto-color)
 
