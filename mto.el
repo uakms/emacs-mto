@@ -2,13 +2,28 @@
 
 ;; Author: nakinor
 ;; Created: 2011-05-12
-;; Revised: 2015-10-01
+;; Revised: 2015-10-04
 
 ;;; Commentary:
 
 ;; See README
 
 ;;; Code:
+;; キーマップ
+(defvar mto-prefix-key "\C-c" "mto prefix key setting.")
+(defvar mto-default-keymap
+  '(("t" mto-region-trad-orth)
+    ("m" mto-region-modern-orth)
+    ("o" mto-region-old-char)
+    ("n" mto-region-new-char)
+    ("k" mto-region-kansai)
+    ("h" mto-region-hangeul)
+    ("c" mto-region-check-traditional)
+;    ("]p" mto-region-ruby-plain)
+;    ("]h" mto-region-ruby-html)
+;    ("]l" mto-region-ruby-latex)
+    ) "mto default keymap")
+
 ;; マイナーモード設定
 (easy-mmode-define-minor-mode mto-mode
   "This is MTO Mode." ; 説明文
@@ -16,17 +31,11 @@
   " MTO"              ; モードラインに表示する文字
   ; マイナーモードでのキーバインド設定
   ; バッファ全体を対象とする置換はメニューバーから選択か M-x で
-  '(("\C-ct" . mto-region-trad-orth)
-    ("\C-cm" . mto-region-modern-orth)
-    ("\C-co" . mto-region-old-char)
-    ("\C-cn" . mto-region-new-char)
-    ("\C-ck" . mto-region-kansai)
-    ("\C-ch" . mto-region-hangeul)
-    ("\C-cc" . mto-region-check-traditional)
-;    ("\C-c]p" . mto-region-ruby-plain)
-;    ("\C-c]h" . mto-region-ruby-html)
-;    ("\C-c]l" . mto-region-ruby-latex)
-    ))
+  (mapcar (lambda (elem)
+            (let ((key (first elem))
+                  (func (second elem)))
+              (cons (concat mto-prefix-key key) func)))
+          mto-default-keymap))
 
 ;; ライブラリの読み込み
 (require 'mto-vars)

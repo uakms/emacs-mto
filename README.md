@@ -8,7 +8,16 @@
 1. このリポジトリを ~/elisp/ 以下にクローンします。
 2. `init.el` に下記を記述します。
 
+    ; 毎回 `M-x mto-mode` するのが面倒なら何かのメジャーモードに便乗する
+    ;(add-hook 'hoge-mode-hook 'mto-mode)
+
+    ; 同包してある辞書を使う
     (setq mto-dict-dir "~/elisp/emacs-mto/dict")
+
+    ; 他のモードのキーマップと衝突した場合はここで `"\C-c."` とか設定する
+    ;(setq mto-prefix-key "\C-c")
+
+    ; これを最後にしとかんと、上の `setq` が効かんのはなんでやねん
     (require 'mto)
 
 3. 適当なテキストを開いて `M-x mto-mode` とします。
