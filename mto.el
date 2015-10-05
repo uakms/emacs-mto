@@ -2,7 +2,7 @@
 
 ;; Author: nakinor
 ;; Created: 2011-05-12
-;; Revised: 2015-10-04
+;; Revised: 2015-10-05
 
 ;;; Commentary:
 
@@ -19,6 +19,7 @@
     ("k" mto-region-kansai)
     ("h" mto-region-hangeul)
     ("c" mto-region-check-traditional)
+    ("u" mto-clear-color)
 ;    ("]p" mto-region-ruby-plain)
 ;    ("]h" mto-region-ruby-html)
 ;    ("]l" mto-region-ruby-latex)
