@@ -35,15 +35,15 @@
 その他のキーバインドについては後日書かれることになるでしょう。
 後日になりました。
 
-    |目的|キーマップ|備考|
-    |:---|:---:|:---|
-    |現代かな使いを旧かな使いへ| `C-c t` | `M-x mto-region-trad-orth` |
-    |漢字の新字体を旧字体へ    | `C-c o` | `M-x mto-region-old-char` |
-    |旧かな使いを現代かな使いへ| `C-c m` | `M-x mto-region-modern-orth` |
-    |漢字の旧字体を新字体へ    | `C-c n` | `M-x mto-region-new-char` |
-    |関西弁にする              | `C-c k` | `M-x mto-region-kansai` |
-    |ハングル文字をひらがなへ  | `C-c h` | `M-x mto-region-hangeul` |
-    |よく間違える旧かなチェック| `C-c c` | `M-x mto-region-check-traditional`|
-    |色付けを解除する          | `C-c u` | `M-x mto-clear-color` |
+|目的|キーマップ|備考|
+|:---|:---:|:---|
+|現代かな使いを旧かな使いへ| `C-c t` | `M-x mto-region-trad-orth` |
+|漢字の新字体を旧字体へ    | `C-c o` | `M-x mto-region-old-char` |
+|旧かな使いを現代かな使いへ| `C-c m` | `M-x mto-region-modern-orth` |
+|漢字の旧字体を新字体へ    | `C-c n` | `M-x mto-region-new-char` |
+|関西弁にする              | `C-c k` | `M-x mto-region-kansai` |
+|ハングル文字をひらがなへ  | `C-c h` | `M-x mto-region-hangeul` |
+|よく間違える旧かなチェック| `C-c c` | `M-x mto-region-check-traditional`|
+|色付けを解除する          | `C-c u` | `M-x mto-clear-color` |
 
 機能としては[このページ](http://nakinor.github.io/mto)でやっていることと同じものです。
