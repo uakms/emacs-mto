@@ -2,7 +2,7 @@
 
 ;; Author: nakinor
 ;; Created: 2012-06-23
-;; Revised: 2015-04-10
+;; Revised: 2017-07-02
 
 ;;; Commentary:
 
@@ -92,6 +92,11 @@
      mto-kansai t]
     ["関西弁へ変換 (選択範囲)"
      mto-region-kansai mark-active]
+    "----"
+    ["한글からひらがなへ変換"
+     mto-hangeul t]
+    ["한글からひらがなへ (選択範囲)"
+     mto-region-hangeul mark-active]
     "----"
     ["誤りやすい仮名使いのチェック"
      mto-check-traditional t]
