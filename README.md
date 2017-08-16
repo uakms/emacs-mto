@@ -6,7 +6,7 @@
 ## どのように使いますか？
 
 1. このリポジトリを ~/elisp/ 以下にクローンします。
-2. [ここ](https://github.com/nakinor/mto)から辞書をクローンもしくはダウンロードします。
+2. [ここ](https://github.com/uakms/mto)から辞書をクローンもしくはダウンロードします。
 3. `init.el` に下記を記述します。`mto-dict-dir` の場所は 2. でダウンロードした辞書へのパスに変更してください。
 
     ```lisp
@@ -47,4 +47,4 @@
 |よく間違える旧かなチェック| `C-c c` | `M-x mto-region-check-traditional`|
 |色付けを解除する          | `C-c u` | `M-x mto-clear-color` |
 
-機能としては[このページ](http://nakinor.github.io/mto)でやっていることと同じものです。
+機能としては[このページ](http://uakms.github.io/mto)でやっていることと同じものです。
